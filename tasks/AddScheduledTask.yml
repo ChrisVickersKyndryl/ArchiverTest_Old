@@ -49,7 +49,7 @@
 # Copy upload archive powershell file to script folder
 - name: Copy upload powershell script to the kyndryl folder
   win_copy:
-    src: "{{ upload_script }}"
+    src: "./scripts/{{ upload_script }}"
     dest: "{{ kyndryl_folder }}{{ upload_script }}"
        
 # Get information so the schedule task so we can see if it already exists 
