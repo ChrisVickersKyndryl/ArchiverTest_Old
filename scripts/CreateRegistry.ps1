@@ -25,7 +25,7 @@
 
 param(
     $User = "User",
-    $PlainTxtPass = "Password"
+    $Password = "Password"
 )
 
 # Check if registry Key exists. If not, add the Key
@@ -37,7 +37,7 @@ if (-Not $(Test-Path -Path 'HKLM:\SOFTWARE\Kyndryl')) {
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Kyndryl' -Name "User" -Value $User | Out-Null
 
 # Convert password plain text to secure string.
-$securePassword = ConvertTo-SecureString $PlainTxtPass -AsPlainText -Force
+$securePassword = ConvertTo-SecureString $Password -AsPlainText -Force
 
 # Convert secure string to plain text
 $securePassword = $securePassword | ConvertFrom-SecureString
