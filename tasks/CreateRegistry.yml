@@ -47,7 +47,7 @@
 
 # Wait for 5 seconds
 - name: sleep for 5 seconds and continue with play
-  wait_for:
+  win_wait_for:
     timeout: 5
         
 # Remove Powershell file 
